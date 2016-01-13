@@ -53,6 +53,8 @@
     <Compile Include="RoomSprite.cs" />
     <Compile Include="TR2\RoomData.cs" />
     <Compile Include="TR1\RoomData.cs" />
+    <Compile Include="TR2\RoomStaticMesh.cs" />
+    <Compile Include="TR1\RoomStaticMesh.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
