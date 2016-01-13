@@ -45,11 +45,19 @@
     <Compile Include="TexTile16.cs" />
     <Compile Include="TexTile8.cs" />
     <Compile Include="Vertex.cs" />
+    <Compile Include="TR1\RoomLight.cs" />
+    <Compile Include="TR2\RoomLight.cs" />
+    <Compile Include="TR2\RoomVertex.cs" />
+    <Compile Include="TR2\RoomRenderingEffect.cs" />
+    <Compile Include="TR1\RoomVertex.cs" />
+    <Compile Include="RoomSprite.cs" />
+    <Compile Include="TR2\RoomData.cs" />
+    <Compile Include="TR1\RoomData.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="TR1\" />
-    <Folder Include="TR2\" />
     <Folder Include="TR3\" />
+    <Folder Include="TR2\" />
   </ItemGroup>
 </Project>

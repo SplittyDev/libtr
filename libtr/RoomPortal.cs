@@ -7,7 +7,7 @@ namespace libtr
 	/// TR2 Room Portal
 	/// </summary>
 	[StructLayout (LayoutKind.Explicit, Size = 32)]
-	public unsafe struct RoomPortal
+	public struct RoomPortal
 	{
 		/// <summary>
 		/// The adjoining room
@@ -25,7 +25,7 @@ namespace libtr
 		/// The vertices
 		/// </summary>
 		[FieldOffset (8)]
-		public fixed Vertex Vertices [4];
+		readonly public Vertex [] Vertices;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="libtr.RoomPortal"/> struct.
@@ -42,10 +42,9 @@ namespace libtr
 			// Set fields
 			AdjoiningRoom = adjoiningroom;
 			Normal = normal;
-			fixed (Vertex *ptr = Vertices) {
-				for (var i = 0; i < 4; i++)
-					*(ptr + i) = vertices [i];
-			}
+			Vertices = new Vertex [4];
+			for (var i = 0; i < 4; i++)
+				Vertices [i] = vertices [i];
 		}
 	}
 }
