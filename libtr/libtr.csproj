@@ -59,6 +59,8 @@
     <Compile Include="Extensions\ByteExtensions.cs" />
     <Compile Include="TR4\MeshFace4.cs" />
     <Compile Include="TR4\MeshFace3.cs" />
+    <Compile Include="TR4\TexTile32.cs" />
+    <Compile Include="TR4\Argb32Color4.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
