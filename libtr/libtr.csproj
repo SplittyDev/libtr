@@ -57,6 +57,8 @@
     <Compile Include="TR1\RoomPortal.cs" />
     <Compile Include="TR5\Vertex.cs" />
     <Compile Include="Extensions\ByteExtensions.cs" />
+    <Compile Include="TR4\MeshFace4.cs" />
+    <Compile Include="TR4\MeshFace3.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
