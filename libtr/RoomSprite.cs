@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace libtr
 {
 	/// <summary>
-	/// TR2 Room Sprite
+	/// TR Room Sprite
 	/// </summary>
 	[StructLayout (LayoutKind.Explicit, Size = 4)]
 	public struct RoomSprite

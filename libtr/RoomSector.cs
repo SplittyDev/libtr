@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace libtr
 {
 	/// <summary>
-	/// TR2 Room Sector
+	/// TR Room Sector
 	/// </summary>
 	[StructLayout (LayoutKind.Explicit, Size = 8)]
 	public struct RoomSector

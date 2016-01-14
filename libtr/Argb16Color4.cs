@@ -11,7 +11,7 @@ namespace libtr
 	*/
 
 	/// <summary>
-	/// TR2 Encoded 16-Bit Color with Transparency
+	/// TR Encoded 16-Bit Color with Transparency
 	/// </summary>
 	[StructLayout (LayoutKind.Explicit, Size = 2)]
 	public struct Argb16Color4

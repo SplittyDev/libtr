@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace libtr
+namespace libtr.TR1
 {
 	/// <summary>
-	/// TR2 Color
+	/// TR1 Color
 	/// </summary>
 	[StructLayout (LayoutKind.Explicit, Size = 3)]
 	public struct Color
@@ -28,7 +28,7 @@ namespace libtr
 		readonly public Byte Blue;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="libtr.Color"/> struct.
+		/// Initializes a new instance of the <see cref="libtr.TR1.Color"/> struct.
 		/// </summary>
 		/// <param name="r">The red component.</param>
 		/// <param name="g">The green component.</param>

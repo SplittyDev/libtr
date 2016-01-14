@@ -36,7 +36,7 @@ namespace libtrtests
 		[TestCase ((UInt16) 0x4000, libtr2.RoomRenderingEffect.UnderwaterLightModulation)]
 		[TestCase ((UInt16) 0x8000, libtr2.RoomRenderingEffect.UnknownWaterEffect)]
 		public void RoomVertexRenderingEffectUnion (UInt16 value, libtr2.RoomRenderingEffect result) {
-			var basevert = new libtrx.Vertex (0, 0, 0);
+			var basevert = new libtr1.Vertex (0, 0, 0);
 			var roomvert = new libtr2.RoomVertex (basevert, 0, value, 0);
 			Assert.That (roomvert.Attributes == result);
 		}

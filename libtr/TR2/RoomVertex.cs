@@ -13,7 +13,7 @@ namespace libtr.TR2
 		/// The position of the vertex relative to the room
 		/// </summary>
 		[FieldOffset (0)]
-		Vertex Vertex;
+		TR1.Vertex Vertex;
 
 		/// <summary>
 		/// The lighting
@@ -51,7 +51,7 @@ namespace libtr.TR2
 		/// <param name="rawattributes">The rendering flags.</param>
 		/// <param name="lighting2">The second lighting value.</param>
 		public RoomVertex (
-			Vertex vertex, Int16 lighting1,
+			TR1.Vertex vertex, Int16 lighting1,
 			UInt16 rawattributes, Int16 lighting2) : this () {
 			Vertex = vertex;
 			Lighting1 = lighting1;
@@ -67,7 +67,7 @@ namespace libtr.TR2
 		/// <param name="attributes">The rendering flags.</param>
 		/// <param name="lighting2">The second lighting value.</param>
 		public RoomVertex (
-			Vertex vertex, Int16 lighting1,
+			TR1.Vertex vertex, Int16 lighting1,
 			RoomRenderingEffect attributes, Int16 lighting2
 		) : this (vertex, lighting1, (UInt16) attributes, lighting2) { }
 	}

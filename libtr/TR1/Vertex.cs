@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace libtr
+namespace libtr.TR1
 {
+	/// <summary>
+	/// TR1 Vertex
+	/// </summary>
 	[StructLayout (LayoutKind.Explicit, Size = 6)]
 	public struct Vertex
 	{
@@ -25,7 +28,7 @@ namespace libtr
 		readonly public Int16 Z;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="libtr.Vertex"/> struct.
+		/// Initializes a new instance of the <see cref="libtr.TR1.Vertex"/> struct.
 		/// </summary>
 		/// <param name="x">The x coordinate.</param>
 		/// <param name="y">The y coordinate.</param>

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace libtr
+namespace libtr.TR1
 {
 	/// <summary>
-	/// TR2 Room Portal
+	/// TR1 Room Portal
 	/// </summary>
 	[StructLayout (LayoutKind.Explicit, Size = 32)]
 	public struct RoomPortal
@@ -28,7 +28,7 @@ namespace libtr
 		readonly public Vertex [] Vertices;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="libtr.RoomPortal"/> struct.
+		/// Initializes a new instance of the <see cref="libtr.TR1.RoomPortal"/> struct.
 		/// </summary>
 		/// <param name="adjoiningroom">The id of the adjoining room.</param>
 		/// <param name="normal">The normal vertex.</param>

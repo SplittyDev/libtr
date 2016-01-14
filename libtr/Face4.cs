@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace libtr
 {
 	/// <summary>
-	/// TR2 Rectanglular Face
+	/// TR Rectanglular Face
 	/// </summary>
 	[StructLayout (LayoutKind.Explicit, Size = 10)]
 	public unsafe struct Face4

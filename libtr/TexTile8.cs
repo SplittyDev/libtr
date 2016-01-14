@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace libtr
 {
 	/// <summary>
-	/// TR2 8-Bit Texture Tile
+	/// TR 8-Bit Texture Tile
 	/// </summary>
 	[StructLayout (LayoutKind.Explicit, Size = 65536)]
 	public unsafe struct TexTile8
