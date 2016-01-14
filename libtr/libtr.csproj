@@ -33,19 +33,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Argb16Color4.cs" />
-    <Compile Include="Face3.cs" />
-    <Compile Include="Face4.cs" />
-    <Compile Include="RoomInfo.cs" />
-    <Compile Include="RoomSector.cs" />
-    <Compile Include="TexTile16.cs" />
-    <Compile Include="TexTile8.cs" />
     <Compile Include="TR1\RoomLight.cs" />
     <Compile Include="TR2\RoomLight.cs" />
     <Compile Include="TR2\RoomVertex.cs" />
     <Compile Include="TR2\RoomRenderingEffect.cs" />
     <Compile Include="TR1\RoomVertex.cs" />
-    <Compile Include="RoomSprite.cs" />
     <Compile Include="TR2\RoomData.cs" />
     <Compile Include="TR1\RoomData.cs" />
     <Compile Include="TR2\RoomStaticMesh.cs" />
@@ -61,6 +53,15 @@
     <Compile Include="TR4\MeshFace3.cs" />
     <Compile Include="TR4\TexTile32.cs" />
     <Compile Include="TR4\Argb32Color4.cs" />
+    <Compile Include="Common\Argb16Color4.cs" />
+    <Compile Include="Common\Face3.cs" />
+    <Compile Include="Common\Face4.cs" />
+    <Compile Include="Common\RoomSector.cs" />
+    <Compile Include="Common\RoomSprite.cs" />
+    <Compile Include="Common\TexTile16.cs" />
+    <Compile Include="Common\TexTile8.cs" />
+    <Compile Include="TR1\RoomInfo.cs" />
+    <Compile Include="TR5\RoomInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -70,5 +71,6 @@
     <Folder Include="TR5\" />
     <Folder Include="TR4\" />
     <Folder Include="Extensions\" />
+    <Folder Include="Common\" />
   </ItemGroup>
 </Project>
