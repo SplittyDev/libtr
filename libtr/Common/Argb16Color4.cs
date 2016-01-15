@@ -8,6 +8,18 @@ namespace libtr
 	* 5-bit red channel (0x7c00) 
 	* 5-bit green channel (0x03e0) 
 	* 5-bit blue channel (0x001f)
+	* 
+	* Encoding:
+	* Alpha: A << 15
+	* Red: (R >> 3) << 10
+	* Green: (G >> 3) << 5
+	* Blue: B >> 3
+	* 
+	* Decoding:
+	* Alpha: Colour >> 15
+	* Red: ((Colour & 0x7C00) >> 10)
+	* Green: ((Colour & 0x03E0) >> 5)
+	* Blue: (Colour & 0x001F)
 	*/
 
 	/// <summary>
@@ -29,6 +41,24 @@ namespace libtr
 		public bool Transparent { get { return (Value >> 15) == 0; } }
 
 		/// <summary>
+		/// Gets the red component
+		/// </summary>
+		/// <value>The red component.</value>
+		public Byte R { get { return (Byte) ((Value & 0x7C00) >> 10); } }
+
+		/// <summary>
+		/// Gets the green component
+		/// </summary>
+		/// <value>The green component.</value>
+		public Byte G { get { return (Byte) ((Value & 0x03E0) >> 5); } }
+
+		/// <summary>
+		/// Gets the blue component
+		/// </summary>
+		/// <value>The blue component.</value>
+		public Byte B { get { return (Byte) (Value & 0x001F); } }
+
+		/// <summary>
 		/// Initializes a new instance of the <see cref="libtr.Argb16Color4"/> struct.
 		/// </summary>
 		/// <param name="value">The value.</param>
@@ -47,9 +77,9 @@ namespace libtr
 			Value = (UInt16) (
 			    0x0
 			    | (transparent ? 0 : 1) << 15
-			    | r.Truncate (3) << 10
-			    | g.Truncate (3) << 5
-			    | b.Truncate (3)
+				| (r >> 3) << 10
+				| (g >> 3) << 5
+				|  b >> 3
 			);
 		}
 	}
