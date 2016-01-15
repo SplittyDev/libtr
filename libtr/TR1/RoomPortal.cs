@@ -10,7 +10,7 @@ namespace libtr.TR1
 	public struct RoomPortal
 	{
 		/// <summary>
-		/// The adjoining room
+		/// Which room this portal leads to
 		/// </summary>
 		[FieldOffset (0)]
 		readonly public UInt16 AdjoiningRoom;

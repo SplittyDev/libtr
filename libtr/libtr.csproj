@@ -62,6 +62,7 @@
     <Compile Include="Common\TexTile8.cs" />
     <Compile Include="TR1\RoomInfo.cs" />
     <Compile Include="TR5\RoomInfo.cs" />
+    <Compile Include="TR3\RoomLight.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
