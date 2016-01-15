@@ -6,7 +6,7 @@ namespace libtr.TR3
 	/// <summary>
 	/// TR3 Room Light
 	/// </summary>
-	[StructLayout (LayoutKind.Explicit, Size = 18)]
+	[StructLayout (LayoutKind.Explicit, Size = 24)]
 	public struct RoomLight
 	{
 		/// <summary>
