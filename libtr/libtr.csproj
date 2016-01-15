@@ -63,6 +63,8 @@
     <Compile Include="TR1\RoomInfo.cs" />
     <Compile Include="TR5\RoomInfo.cs" />
     <Compile Include="TR3\RoomLight.cs" />
+    <Compile Include="TR4\RoomLight.cs" />
+    <Compile Include="TR4\RoomLightType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
