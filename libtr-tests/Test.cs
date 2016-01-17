@@ -20,11 +20,21 @@ namespace libtrtests
 			Assert.AreEqual (texture_and_result, face4.Texture);
 		}
 
-		[TestCase (true )]
-		[TestCase (false)]
-		public void Argb16Color4Transparency (Boolean t) {
-			var color = new libtrx.Argb16Color4 (t, 12, 34, 56);
-			Assert.That (t == color.Transparent);
+		[TestCase (false, (Byte) 000, (Byte) 000, (Byte) 000)]
+		[TestCase (false, (Byte) 123, (Byte) 123, (Byte) 123)]
+		[TestCase (false, (Byte) 255, (Byte) 255, (Byte) 255)]
+		[TestCase (true , (Byte) 000, (Byte) 000, (Byte) 000)]
+		[TestCase (true , (Byte) 123, (Byte) 123, (Byte) 123)]
+		[TestCase (true , (Byte) 255, (Byte) 255, (Byte) 255)]
+		public void Argb16Color4 (Boolean t, Byte r, Byte g, Byte b) {
+			var color = new libtrx.Argb16Color4 (t, r, g, b);
+			Console.WriteLine ("R: {0}/{1}", color.R, r);
+			Console.WriteLine ("G: {0}/{1}", color.G, g);
+			Console.WriteLine ("B: {0}/{1}", color.B, b);
+			Assert.That (t == color.Transparent, "Transparency check failed");
+			Assert.That (Math.Abs (r - color.R) <= 7, string.Format ("R check failed: Error was {0}", r - color.R));
+			Assert.That (Math.Abs (g - color.G) <= 7, "G check failed");
+			Assert.That (Math.Abs (b - color.B) <= 7, "B check failed");
 		}
 	}
 
@@ -35,7 +45,7 @@ namespace libtrtests
 		[TestCase ((UInt16) 0x2000, libtr2.RoomRenderingEffect.WaterSurfaceMovement)]
 		[TestCase ((UInt16) 0x4000, libtr2.RoomRenderingEffect.UnderwaterLightModulation)]
 		[TestCase ((UInt16) 0x8000, libtr2.RoomRenderingEffect.UnknownWaterEffect)]
-		public void RoomVertexRenderingEffectUnion (UInt16 value, libtr2.RoomRenderingEffect result) {
+		public void RoomVertexRenderingEffect (UInt16 value, libtr2.RoomRenderingEffect result) {
 			var basevert = new libtr1.Vertex (0, 0, 0);
 			var roomvert = new libtr2.RoomVertex (basevert, 0, value, 0);
 			Assert.That (roomvert.Attributes == result);

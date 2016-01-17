@@ -44,19 +44,19 @@ namespace libtr
 		/// Gets the red component
 		/// </summary>
 		/// <value>The red component.</value>
-		public Byte R { get { return (Byte) ((Value & 0x7C00) >> 10); } }
+		public Byte R { get { return CorrectValue (Value & 0x7C00 >> 10); } }
 
 		/// <summary>
 		/// Gets the green component
 		/// </summary>
 		/// <value>The green component.</value>
-		public Byte G { get { return (Byte) ((Value & 0x03E0) >> 5); } }
+		public Byte G { get { return CorrectValue (Value & 0x03E0 >> 5); } }
 
 		/// <summary>
 		/// Gets the blue component
 		/// </summary>
 		/// <value>The blue component.</value>
-		public Byte B { get { return (Byte) (Value & 0x001F); } }
+		public Byte B { get { return CorrectValue (Value & 0x001F); } }
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="libtr.Argb16Color4"/> struct.
@@ -74,13 +74,36 @@ namespace libtr
 		/// <param name="g">The green component.</param>
 		/// <param name="b">The blue component.</param>
 		public Argb16Color4 (bool transparent, Byte r, Byte g, Byte b) : this () {
-			Value = (UInt16) (
-			    0x0
-			    | (transparent ? 0 : 1) << 15
-				| (r >> 3) << 10
-				| (g >> 3) << 5
-				|  b >> 3
-			);
+			var a = (Byte) (transparent ? 0 : 1);
+			Value = EncodeAll (a, r, g, b);
+		}
+
+		/// <summary>
+		/// Encodes all bytes.
+		/// </summary>
+		/// <returns>The all.</returns>
+		/// <param name="a">The alpha component.</param>
+		/// <param name="r">The red component.</param>
+		/// <param name="g">The green component.</param>
+		/// <param name="b">The blue component.</param>
+		static UInt16 EncodeAll (Byte a, Byte r, Byte g, Byte b) {
+			var result = 0x0;
+			var bytes = new [] { a, r, g, b };
+			for (var pos = 0; pos < 4; pos++) {
+				var cur = bytes [pos];
+				var shl = Math.Abs ((pos - 3) * 15 / 3);
+				result |= (cur >> (pos == 0 ? 0 : 3)) << shl;
+			}
+			return (UInt16) result;
+		}
+
+		/// <summary>
+		/// Corrects a byte extracted from the <see cref="Value"/>.
+		/// </summary>
+		/// <returns>The value.</returns>
+		/// <param name="b">The blue component.</param>
+		static Byte CorrectValue (Int32 b) {
+			return (Byte) ((b * 255) / 31);
 		}
 	}
 }
